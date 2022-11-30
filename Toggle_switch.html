@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Switch</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;/*horizontal control*/
+            align-items: center;/*vertical control*/
+        }
+        .container{
+            width: 75px;
+            height: 40px;
+            background: #212221;
+            background: linear-gradient(to right,#4a00e0,#8e2de2);
+            border-radius: 50px;position: relative;
+
+        }
+        .container input{/*child of conatiner class*/
+            position:absolute;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            
+        }
+        .container input::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: rgb(255, 255,255);
+            height: 70%;
+            width: 85%;
+            border-radius: 50px;
+        }
+        .container input::after
+        {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 25px;
+            height: 25px;
+            opacity: 0.4;
+            border-radius: 50px;
+            transition: all 0.4s;
+            transform: translate(-7px,-50%);
+            background: linear-gradient(to right,#4a00e0,#8e2de2)
+        }
+        .container input:checked::after{
+            transform: translate(170%,-50%);
+            opacity: 1;
+        }
+            
+            
+            
+            
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox">
+        
+    </div>
+    
+</body>
+</html>
